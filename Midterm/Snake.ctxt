@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Snake
+comment0.text=\r\n\ \r\n
+comment1.params=
+comment1.target=Snake()
+comment1.text=\r\n\ set\ the\ limit\ of\ our\ random\ number\ from\ 0\ to\ 359\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Snake\ wants\ to\ do.\ This\ method\ allows\ the\ snake\ to\ move\ around,\ eat\ the\ pig,\ and\ transition\ to\ the\ losing\ world\ if\ the\ player\ lost\r\n
+comment3.params=
+comment3.target=void\ movingAround()
+comment3.text=\r\n\ for\ the\ snake\ to\ move\ around\ randomly\r\n
+comment4.params=
+comment4.target=void\ eatPig()
+comment4.text=\r\n\ if\ the\ snake\ intersects\ with\ the\ pig,\ it\ removes\ the\ pig\ from\ the\ world\r\n
+comment5.params=
+comment5.target=boolean\ isGameLost()
+comment5.text=\r\n\ checks\ if\ the\ player\ lost\ by\ checking\ if\ pig\ is\ gone\r\n
+comment6.params=
+comment6.target=void\ transitionToLosingWorld()
+comment6.text=\r\n\ the\ transition\ to\ our\ losing\ world\r\n
+numComments=7

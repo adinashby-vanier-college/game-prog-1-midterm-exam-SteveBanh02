@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="WinnerWorld" extends="World" extends-java="World" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve">Constructor for objects of class WinningWorld. For displaying our text and play our winning sound</javadoc>
+            <params/>
+            <throws/>
+            <delegate target="super" params="600,400,1" params-java="600, 400, 1"/>
+            <body>
+                <call expression="showWinningText(&quot;You Won !&quot;,150,200)" expression-java="showWinningText(&quot;You Won !&quot;, 150, 200)" enable="true"/>
+                <call expression="winSound()" expression-java="winSound()" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="public" type="void" type-java="void" name="showWinningText" enable="true">
+            <javadoc xml:space="preserve">shows our win text in the world</javadoc>
+            <params>
+                <params type="String" type-java="String" name="message"/>
+                <params type="int" type-java="int" name="x"/>
+                <params type="int" type-java="int" name="y"/>
+            </params>
+            <throws/>
+            <body>
+                <variable type="GreenfootImage" type-java="GreenfootImage" name="text" value="getBackground()" value-java="getBackground()" enable="true"/>
+                <variable type="Font" type-java="Font" name="font" value="new Font(60)" value-java=" new Font(60)" enable="true"/>
+                <call expression="text.setFont(font)" expression-java="text.setFont(font)" enable="true"/>
+                <call expression="text.setColor(Color.BLACK)" expression-java="text.setColor(Color.BLACK)" enable="true"/>
+                <call expression="text.drawString(message,x,y)" expression-java="text.drawString(message, x, y)" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="winSound" enable="true">
+            <javadoc xml:space="preserve">plays the winning sound </javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="Greenfoot.playSound(&quot;win.wav&quot;)" expression-java="Greenfoot.playSound(&quot;win.wav&quot;)" enable="true"/>
+            </body>
+        </method>
+    </methods>
+</class>

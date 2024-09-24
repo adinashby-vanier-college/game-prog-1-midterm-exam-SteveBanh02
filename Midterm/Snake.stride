@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="Snake" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve">set the limit of our random number from 0 to 359</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="turn(Greenfoot.getRandomNumber(360))" expression-java="turn(Greenfoot.getRandomNumber(360))" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the Snake wants to do. This method allows the snake to move around, eat the pig, and transition to the losing world if the player lost</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="movingAround()" expression-java="movingAround()" enable="true"/>
+                <call expression="eatPig()" expression-java="eatPig()" enable="true"/>
+                <if condition="isGameLost()" condition-java="isGameLost()" enable="true">
+                    <ifStatements>
+                        <call expression="transitionToLosingWorld()" expression-java="transitionToLosingWorld()" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="movingAround" enable="true">
+            <javadoc xml:space="preserve">for the snake to move around randomly</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="move(3)" expression-java="move(3)" enable="true"/>
+                <if condition="Greenfoot.getRandomNumber(10)==1" condition-java="Greenfoot.getRandomNumber(10) == 1" enable="true">
+                    <ifStatements>
+                        <call expression="turn(Greenfoot.getRandomNumber(90)-45)" expression-java="turn(Greenfoot.getRandomNumber(90) - 45)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="isAtEdge()" condition-java="isAtEdge()" enable="true">
+                    <ifStatements>
+                        <call expression="turn(180)" expression-java="turn(180)" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="eatPig" enable="true">
+            <javadoc xml:space="preserve">if the snake intersects with the pig, it removes the pig from the world</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="Actor" type-java="Actor" name="pig" value="getOneIntersectingObject(Pig.class)" value-java="getOneIntersectingObject(Pig.class)" enable="true"/>
+                <if condition="pig!=null" condition-java="pig != null" enable="true">
+                    <ifStatements>
+                        <variable type="World" type-java="World" name="world" value="getWorld()" value-java="getWorld()" enable="true"/>
+                        <call expression="world.removeObject(pig)" expression-java="world.removeObject(pig)" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="boolean" type-java="boolean" name="isGameLost" enable="true">
+            <javadoc xml:space="preserve">checks if the player lost by checking if pig is gone</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="World" type-java="World" name="world" value="getWorld()" value-java="getWorld()" enable="true"/>
+                <if condition="world.getObjects(Pig.class).isEmpty()" condition-java="world.getObjects(Pig.class).isEmpty()" enable="true">
+                    <ifStatements>
+                        <return value="true" value-java="true" enable="true"/>
+                    </ifStatements>
+                    <else>
+                        <return value="false" value-java="false" enable="true"/>
+                    </else>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="transitionToLosingWorld" enable="true">
+            <javadoc xml:space="preserve">the transition to our losing world</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="World" type-java="World" name="gameOver" value="new LoserWorld()" value-java=" new LoserWorld()" enable="true"/>
+                <call expression="Greenfoot.setWorld(gameOver)" expression-java="Greenfoot.setWorld(gameOver)" enable="true"/>
+            </body>
+        </method>
+    </methods>
+</class>

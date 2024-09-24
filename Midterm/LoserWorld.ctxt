@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=LoserWorld
+comment0.text=\r\n\ \r\n
+comment1.params=
+comment1.target=LoserWorld()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameOver.\ display\ our\ losing\ text\ as\ well\ as\ playing\ our\ losing\ sound\r\n
+comment2.params=message\ x\ y
+comment2.target=void\ showLosingText(java.lang.String,\ int,\ int)
+comment2.text=\r\n\ shows\ our\ losing\ text\r\n
+comment3.params=
+comment3.target=void\ losingSound()
+comment3.text=\r\n\ for\ playing\ our\ losing\ sound\r\n
+numComments=4

@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Pig
+comment0.text=\r\n\ \r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Pig\ wants\ to\ do.\ This\ method\ allows\ the\ player\ to\ move,\ eat\ the\ burgers,\ and\ transition\ to\ the\ winner\ world\ if\ the\ player\ won\r\n
+comment2.params=
+comment2.target=void\ movement()
+comment2.text=\r\n\ using\ our\ awsd\ key\ to\ move\ our\ pig\ around\r\n
+comment3.params=
+comment3.target=void\ eatBurger()
+comment3.text=\r\n\ checks\ if\ pig\ intersects\ with\ the\ burgers,\ it\ removes\ the\ pig\ from\ our\ world\r\n
+comment4.params=
+comment4.target=boolean\ isGameWon()
+comment4.text=\r\n\ checks\ if\ the\ player\ won\ by\ checking\ if\ all\ the\ burgers\ are\ gone\r\n
+comment5.params=
+comment5.target=void\ transitionToWinningWorld()
+comment5.text=\r\n\ the\ transition\ to\ our\ winning\ world\r\n
+numComments=6

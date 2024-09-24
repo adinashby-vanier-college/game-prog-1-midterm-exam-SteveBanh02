@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="LoserWorld" extends="World" extends-java="World" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve">Constructor for objects of class GameOver. display our losing text as well as playing our losing sound</javadoc>
+            <params/>
+            <throws/>
+            <delegate target="super" params="600,400,1" params-java="600, 400, 1"/>
+            <body>
+                <call expression="showLosingText(&quot;Game Over !&quot;,150,200)" expression-java="showLosingText(&quot;Game Over !&quot;, 150, 200)" enable="true"/>
+                <call expression="losingSound()" expression-java="losingSound()" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="public" type="void" type-java="void" name="showLosingText" enable="true">
+            <javadoc xml:space="preserve">shows our losing text</javadoc>
+            <params>
+                <params type="String" type-java="String" name="message"/>
+                <params type="int" type-java="int" name="x"/>
+                <params type="int" type-java="int" name="y"/>
+            </params>
+            <throws/>
+            <body>
+                <variable type="GreenfootImage" type-java="GreenfootImage" name="text" value="getBackground()" value-java="getBackground()" enable="true"/>
+                <variable type="Font" type-java="Font" name="font" value="new Font(60)" value-java=" new Font(60)" enable="true"/>
+                <call expression="text.setFont(font)" expression-java="text.setFont(font)" enable="true"/>
+                <call expression="text.setColor(Color.WHITE)" expression-java="text.setColor(Color.WHITE)" enable="true"/>
+                <call expression="text.drawString(message,x,y)" expression-java="text.drawString(message, x, y)" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="losingSound" enable="true">
+            <javadoc xml:space="preserve">for playing our losing sound</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="Greenfoot.playSound(&quot;lose.wav&quot;)" expression-java="Greenfoot.playSound(&quot;lose.wav&quot;)" enable="true"/>
+            </body>
+        </method>
+    </methods>
+</class>
